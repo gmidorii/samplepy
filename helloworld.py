@@ -1,6 +1,7 @@
 # coding:utf-8
 
 import sys
+import glob
 
 def greet(name):
 	print(name)
@@ -36,11 +37,23 @@ def main():
 	print("\n")
 
 	# arg + try-except
-	try:
+	#try:
 		#arg = sys.argv[1:]
 		#print(arg)
-	except ValueError:
-		print("Error")
+	#except ValueError:
+		#print("Error")
+	print("\n")
+
+	# file
+	files = glob.glob("sample/*.txt")
+	print(files)
+	for file_name in files:
+		print("--------- " + file_name + " -----------")
+
+		with open(file_name) as f:
+			for line in f:
+				print(line.rstrip())
+	print("\n")
 
 if __name__ == "__main__":
 	main()
