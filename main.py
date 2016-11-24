@@ -2,6 +2,7 @@
 
 import sys
 import glob
+from time import localtime
 
 def greet(name):
 	print(name)
@@ -54,6 +55,35 @@ def main():
 			for line in f:
 				print(line.rstrip())
 	print("\n")
+
+	# time
+	now = localtime()
+	hour = now.tm_hour
+	print(hour)
+	print("\n")
+
+	# triple quote
+	REFRAIN = '''
+	{} bottles
+	{} bottoles of beer
+	{} hogehoge
+	'''
+	beer = 5
+	while beer > 1:
+		print(REFRAIN.format(beer, beer, beer - 1))
+		beer -= 1
+
+	# class
+	class BankAccount:
+		# constructor
+		def __init__(self, val):
+			self.val = val
+
+		def output(self):
+			print(self.val)
+
+	bank = BankAccount(20)
+	bank.output()
 
 if __name__ == "__main__":
 	main()
