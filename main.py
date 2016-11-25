@@ -85,6 +85,10 @@ def main():
 	bank = BankAccount(20)
 	bank.output()
 
+
+	# test
+	return 4;
+
 if __name__ == "__main__":
 	main()
 
